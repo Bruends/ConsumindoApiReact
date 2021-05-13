@@ -1,12 +1,20 @@
 import React from "react";
+import {
+  MovieContainer,
+  MovieTitle,
+  MovieOriginalTitle,
+  MovieDescription,
+  MovieScore,
+} from "./styled";
 
 const index = (props) => {
   return (
-    <div>
-      <h2>{props.title}</h2>
-      <small>{props.original_title}</small>
-      <p>{props.description}</p>
-    </div>
+    <MovieContainer>
+      <MovieTitle>{props.title}</MovieTitle>
+      <MovieOriginalTitle>{props.original_title}</MovieOriginalTitle>
+      <MovieDescription>{props.description}</MovieDescription>
+      <MovieScore>Score: {props.rt_score}</MovieScore>
+    </MovieContainer>
   );
 };
 
