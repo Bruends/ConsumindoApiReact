@@ -1,22 +1,28 @@
 import React from "react";
-import "./App.css";
-import MovieCard from "./components/MovieCard";
 import useFetchApi from "./hooks/useFechApi";
 import moviesArray from "./movies";
+import MainContainer from "./components/MainContainer";
+import { GlobalStyle } from "./GlobalStyle";
 
 function App() {
-  // const { fetchData, loading, error, data } = useFetchApi();
+  const { fetchData, loading, error, data } = useFetchApi();
 
-  // React.useEffect(() => {
-  //   fetchData();
-  // }, [fetchData]);
+  React.useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
-  const loading = false;
-  const data = moviesArray;
+  // const loading = false;
+  // const data = moviesArray;
 
-  if (loading) return <div>loading..</div>;
-  if (data) return data.map((movie) => <MovieCard key={movie.id} {...movie} />);
-  else return null;
+  if (loading) return <div> Loading </div>;
+  if (data) {
+    return (
+      <>
+        <GlobalStyle />
+        <MainContainer movies={data} />
+      </>
+    );
+  } else return null;
 }
 
 export default App;
