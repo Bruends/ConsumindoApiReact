@@ -1,6 +1,6 @@
 import React from "react";
 import useFetchApi from "./hooks/useFechApi";
-import moviesArray from "./movies";
+import { getMovies } from "./utils/apiFetchConfig";
 import MainContainer from "./components/MainContainer";
 import { GlobalStyle } from "./GlobalStyle";
 
@@ -8,11 +8,8 @@ function App() {
   const { fetchData, loading, error, data } = useFetchApi();
 
   React.useEffect(() => {
-    fetchData();
+    fetchData(getMovies);
   }, [fetchData]);
-
-  // const loading = false;
-  // const data = moviesArray;
 
   if (loading) return <div> Loading </div>;
   if (data) {

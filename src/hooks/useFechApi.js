@@ -5,8 +5,7 @@ const useFetchApi = () => {
   const [data, setData] = React.useState();
   const [error, setError] = React.useState(null);
 
-  const fetchData = React.useCallback(async () => {
-    const apiUrl = "https://ghibliapi.herokuapp.com/films?limit=10";
+  const fetchData = React.useCallback(async (fetchConfig) => {
     let response;
     let json;
 
@@ -17,9 +16,7 @@ const useFetchApi = () => {
       setError(false);
 
       // requisição a api
-      response = await fetch(apiUrl, {
-        method: "GET",
-      });
+      response = await fetch(fetchConfig.url, fetchConfig.options);
 
       json = await response.json();
 
