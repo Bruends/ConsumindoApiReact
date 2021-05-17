@@ -9,7 +9,7 @@ export const MovieContainer = styled.div`
   outline-offset: -1rem;
   position: relative;
   margin-bottom: 2rem;
-  background-color: #fff;
+  background-color: var(--card-color);
 `;
 
 export const MovieTitle = styled.h2`

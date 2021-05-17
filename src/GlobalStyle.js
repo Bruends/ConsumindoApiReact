@@ -2,9 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --primary-color: #a3d2ca;
-        --secondary-color: #f05945;
-        --bg-color: #E0F7FA;
+        --primary-color: #314e52;
+        --secondary-color: #f2a154;
+        --bg-color: #e7e6e1;
+        --card-color: #f7f6e7;
     }
 
     *{
